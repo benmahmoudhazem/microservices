@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-WORKING_DIR="$(pwd)"
+export APP_NAME=simple-service
+. ./env.sh
 
-export JAVA_OPTS=-Xmx1024M
+export JAVA_OPTS=-Xmx128M
 
