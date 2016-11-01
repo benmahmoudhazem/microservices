@@ -1,9 +1,31 @@
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
+# Java Files #
+*.class
+
+# Package Files #
+# *.jar, we need to checkin gradle/wrapper/gradle-wrapper.jar
+*.war
+*.ear
+
+# Eclipse files #
+.settings
+.classpath
+.project
+
+# IntelliJ files #
+.idea
+local.properties
+*.iml
+out
+
+lib
+
+# Gradle files #
+.gradle
+build
+
+target
+logs
+ML-to-do-notes.md
+data
+mycert.pem
+incubator

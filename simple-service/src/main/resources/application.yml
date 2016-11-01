@@ -1,0 +1,26 @@
+
+banner:
+  charset: UTF-8 # Banner file encoding.
+
+server:
+  port: 8080
+
+  tomcat:
+    access_log_enabled: true
+    access_log_pattern: '%h %t "%r" %s %b'
+    basedir: tomcat
+
+
+management:
+  port: 8081
+
+  trace:
+    include: REQUEST_HEADERS,RESPONSE_HEADERS,ERRORS,PATH_INFO,PATH_TRANSLATED,CONTEXT_PATH,USER_PRINCIPAL,PARAMETERS,QUERY_STRING,AUTH_TYPE,REMOTE_ADDRESS,SESSION_ID,REMOTE_USER
+
+logging:
+  file: logs/@project.name@.log
+
+
+spring:
+  pid:
+    file: @project.name@.pid
