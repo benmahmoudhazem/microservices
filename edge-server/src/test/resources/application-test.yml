@@ -1,0 +1,9 @@
+
+management:
+  port: 0
+  address: 127.0.0.1
+  context-path: /admin
+
+eureka:
+  client:
+    enabled: false

@@ -31,3 +31,6 @@ incubator
 
 # Mac OS Files
 .DS_Store
+
+# H2
+*.db

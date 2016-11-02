@@ -24,7 +24,8 @@ Script | Description
 ------------ | -------------
 master | HEAD
 M1_basic | Les features de bases de spring-boot [wiki](https://github.com/fanfansama/microservices/wiki/simple)
-M2_db | integration de spring-data-jpa & Flyway
+M2_db | integration de spring-data-jpa & Flyway [wiki](https://github.com/fanfansama/microservices/wiki/db)
+M3_cloud | Spring Cloud [wiki](https://github.com/fanfansama/microservices/wiki/cloud)
 
 
 ### TODO LIST

@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 export APP_NAME=simple-service
-. ./env.sh
+. ./ops/env.sh
 
 export JAVA_OPTS=-Xmx128M
+export SERVER_PORT=0
+
 

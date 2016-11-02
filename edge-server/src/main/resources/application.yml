@@ -1,0 +1,18 @@
+
+banner:
+  charset: UTF-8 # Banner file encoding.
+
+server:
+  port: 8080
+
+management:
+  context-path: /manage
+
+eureka:
+  instance:
+    statusPageUrlPath: ${management.context-path}/info
+    healthCheckUrlPath: ${management.context-path}/health
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
