@@ -11,6 +11,9 @@
 
 ## How-To 
 ### Les scripts
-build.sh : compile et package les modules du projet 
-start.sh : demarre un microservice ex: start.sh *simple-service*
-stop.sh : stop un microservice ex: start.sh *simple-service*
+
+Script | Description
+------------ | -------------
+build.sh | compile et package les modules du projet
+start.sh | demarre un microservice ex: start.sh *simple-service*
+stop.sh | stop un microservice ex: start.sh *simple-service*
