@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-#export HOME_DIR=/Users/francois/Project/projet/microservices
+export MODE=service
+WORKING_DIR="$(pwd)"
 
-export JAVA_OPTS=-Xmx1024M
+export JARFILE=$WORKING_DIR/$APP_NAME/target/$APP_NAME*-exec.jar
+export PID_FOLDER=$WORKING_DIR/$APP_NAME/target/
+export LOG_FOLDER=$WORKING_DIR/$APP_NAME/target/
+
+
 
