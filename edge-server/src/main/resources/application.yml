@@ -3,29 +3,16 @@ banner:
   charset: UTF-8 # Banner file encoding.
 
 server:
-  port: 8761
+  port: 8080
 
 management:
-#  port: 8762
   context-path: /manage
 
 eureka:
-  datacenter: talanlabs
-  environment: github
   instance:
-    hostname: localhost
     statusPageUrlPath: ${management.context-path}/info
     healthCheckUrlPath: ${management.context-path}/health
     instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
-
-  server:
-    waitTimeInMsWhenSyncEmpty: 0
-
-  # Stand-alone
   client:
-    registerWithEureka: false
-    fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-
-
+      defaultZone: http://127.0.0.1:8761/eureka/

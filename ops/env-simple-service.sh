@@ -4,4 +4,6 @@ export APP_NAME=simple-service
 . ./ops/env.sh
 
 export JAVA_OPTS=-Xmx128M
+export SERVER_PORT=0
+
 

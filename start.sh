@@ -13,7 +13,6 @@ fi
 export SERVICE=$1
 export SERVICE_TARGET_DIR=$SERVICE*/target/
 
-clear
 . ./ops/env-$SERVICE*.sh
 
 cd $SERVICE_TARGET_DIR
