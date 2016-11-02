@@ -30,9 +30,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class HotelRepositoryIntegrationTest {
 
 	@Autowired
-	CityRepository cityRepository;
+	private CityRepository cityRepository;
 	@Autowired
-	HotelRepository repository;
+	private HotelRepository repository;
 
 	@Test
 	public void executesQueryMethodsCorrectly() {

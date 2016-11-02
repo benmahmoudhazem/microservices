@@ -14,7 +14,7 @@ export SERVICE=$1
 export SERVICE_TARGET_DIR=$SERVICE*/target/
 
 clear
-. ./env-$SERVICE*.sh
+. ./ops/env-$SERVICE*.sh
 
 cd $SERVICE_TARGET_DIR
 ./$SERVICE*-exec.jar start

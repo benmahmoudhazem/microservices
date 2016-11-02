@@ -128,6 +128,7 @@
     <modules>
         <module>simple-service</module>
         <module>data-service</module>
+        <module>discovery-server</module>
     </modules>
 
 </project>

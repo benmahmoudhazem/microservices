@@ -22,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CityRepositoryIntegrationTest {
 
 	@Autowired
-	CityRepository repository;
+	private CityRepository repository;
 
 	@Test
 	public void findsFirstPageOfCities() {

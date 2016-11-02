@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: @project.name@
+  pid:
+    file: @project.name@.pid
+
+logging:
+  file: logs/@project.name@.log
+
+
