@@ -1,3 +1,7 @@
+spring:
+  application:
+    name: edge-test
+
 
 management:
   port: 0
@@ -5,5 +9,6 @@ management:
   context-path: /admin
 
 eureka:
+  enabled: false
   client:
     enabled: false

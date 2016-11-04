@@ -1,0 +1,36 @@
+banner:
+  charset: UTF-8 # Banner file encoding.
+
+# Define the port where the UAA server would be running
+server:
+  port: 9090
+  # Use different context-path to avoid session cookie overlapping
+  context-path: /uaa
+  use-forward-headers: true
+
+management:
+  context-path: /manage
+
+# Define the Eureka server that handles service registration
+eureka:
+  instance:
+      hostname: localhost
+      port: 8761
+      statusPageUrlPath: /${server.context-path}/${management.context-path}/info
+      healthCheckUrlPath: /${server.context-path}/${management.context-path}/health
+      instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+
+# Define security
+security:
+  basic:
+    enabled: false
+  user:
+    password: password
+  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
+
+logging:
+  level.org.springframework.security: DEBUG
+

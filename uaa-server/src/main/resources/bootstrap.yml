@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: uaa-server
+  pid:
+    file: uaa-server.pid
+
+logging:
+  file: @project.build.directory@/@project.name@.log
+
+

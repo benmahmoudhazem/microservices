@@ -1,7 +1,10 @@
 package com.talanlabs.microservices;
 
+//import com.talanlabs.microservices.rest.HomeController;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.actuate.autoconfigure.LocalManagementPort;
 import org.springframework.boot.context.embedded.LocalServerPort;
@@ -30,16 +33,23 @@ public class ApplicationTest {
     @Value("${management.context-path}")
     private String managementContext;
 
+    @Autowired
+    private TestRestTemplate restTemplate;
+
+    @Ignore
     @Test
-    public void catalogLoads() {
-        ResponseEntity<Map> entity = new TestRestTemplate().getForEntity("http://localhost:" + port, Map.class);
-        assertThat(HttpStatus.NOT_FOUND).isEqualTo(entity.getStatusCode());
+    public void homePage() {
+        ResponseEntity<String> entity = this.restTemplate.getForEntity("/", String.class);
+        assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
+     //   assertThat(entity.getBody()).isEqualTo(HomeController.HELLO_WORLD);
+        assertThat(entity.getHeaders()).containsKeys("Set-Cookie");
+        entity.getHeaders().get("Set-Cookie").contains("XSRF-TOKEN");
     }
 
     @Test
     public void adminLoads() {
-        ResponseEntity<Map> entity = new TestRestTemplate().getForEntity("http://localhost:" + managementPort + managementContext + "/env", Map.class);
-        assertThat(HttpStatus.OK).isEqualTo(entity.getStatusCode());
+        ResponseEntity<Map> entity = restTemplate.getForEntity("http://localhost:" + managementPort + managementContext + "/env", Map.class);
+        assertThat(HttpStatus.FOUND).isEqualTo(entity.getStatusCode());
     }
 
 

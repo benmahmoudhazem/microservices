@@ -32,7 +32,7 @@ public class ApplicationTest {
     @Test
     public void testHome() throws Exception {
 
-        this.mvc.perform(get("/")).andExpect(status().isOk())
+        this.mvc.perform(get("/hello-db")).andExpect(status().isOk())
                 .andExpect(content().string("Bath"));
     }
 
