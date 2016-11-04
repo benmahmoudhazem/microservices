@@ -1,10 +1,8 @@
-# Java Files #
+# Maven Files #
 *.class
+target
 
-# Package Files #
-# *.jar, we need to checkin gradle/wrapper/gradle-wrapper.jar
-*.war
-*.ear
+
 
 # Eclipse files #
 .settings
@@ -16,21 +14,15 @@
 local.properties
 *.iml
 out
-
 lib
 
-# Gradle files #
-.gradle
-build
-
-target
+# Misc #
+tomcat
 logs
 data
-mycert.pem
-incubator
 
-# Mac OS Files
+# Mac OS Files #
 .DS_Store
 
-# H2
+# H2 #
 *.db

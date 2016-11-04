@@ -5,6 +5,6 @@ spring:
     file: @project.name@.pid
 
 logging:
-  file: logs/@project.name@.log
+  file: @project.build.directory@/@project.name@.log
 
 

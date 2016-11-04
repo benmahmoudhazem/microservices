@@ -10,14 +10,20 @@ echoYellow() { echo $'\e[0;33m'"$1"$'\e[0m'; }
 
 if [ $# -eq 0 ]; then
     echoRed "No arguments provided"
+    echoRed "usage: $0 [simple-service|data-service|...]"
     exit 1
 fi
 
-export SERVICE=$1
-export SERVICE_TARGET_DIR=$SERVICE*/target/
+export SERVICE=${1%/}
+export SERVICE_TARGET_DIR=$SERVICE*/target
 
-. ./ops/env-$SERVICE*.sh
 
-cd $SERVICE_TARGET_DIR
-echoYellow "$(pwd)"
-./$SERVICE*-exec.jar stop
+FILE=$SERVICE_TARGET_DIR/$SERVICE*-exec.jar
+
+if [ -f $FILE ]
+then
+    . ./ops/env-$SERVICE*.sh
+    ./$FILE stop
+else
+    echoYellow "the jar file does not exist ($FILE)"
+fi
