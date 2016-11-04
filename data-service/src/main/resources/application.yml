@@ -2,11 +2,14 @@
 banner:
   charset: UTF-8 # Banner file encoding.
 
+# Define the tomcat port (0 : random free port)
 server:
-  port: 8080
+  port: 0
 
+# Actuator Management
 management:
   context-path: /manage
+
 
 spring:
   jpa:
@@ -21,6 +24,7 @@ spring:
     password: sa
     driverClassName: org.h2.Driver
 
+# Define the Eureka server that handles service registration
 eureka:
   instance:
     statusPageUrlPath: ${management.context-path}/info
@@ -30,10 +34,11 @@ eureka:
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka/
 
-# Disable spring basic authentication security
 security:
+  # Disable spring basic authentication security
   basic:
     enabled: false
+  # Oauth2 Configuration
   oauth2:
     resource:
       jwt:
