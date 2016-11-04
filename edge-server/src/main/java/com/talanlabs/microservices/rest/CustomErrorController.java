@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
+
+// disable this white labeling error patch
 //@RestController
 public class CustomErrorController implements ErrorController {
 

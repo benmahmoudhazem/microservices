@@ -83,6 +83,7 @@
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
 				<excludes>
+					<!-- ne pas filter le keystore pour ne pas le corrompre -->
 					<exclude>keystore.jks</exclude>
 				</excludes>
 			</resource>

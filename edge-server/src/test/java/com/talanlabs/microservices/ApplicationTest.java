@@ -1,6 +1,5 @@
 package com.talanlabs.microservices;
 
-//import com.talanlabs.microservices.rest.HomeController;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -49,7 +48,7 @@ public class ApplicationTest {
     @Test
     public void adminLoads() {
         ResponseEntity<Map> entity = restTemplate.getForEntity("http://localhost:" + managementPort + managementContext + "/env", Map.class);
-        assertThat(HttpStatus.FOUND).isEqualTo(entity.getStatusCode());
+        assertThat(HttpStatus.OK).isEqualTo(entity.getStatusCode());
     }
 
 

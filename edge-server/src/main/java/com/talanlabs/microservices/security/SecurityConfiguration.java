@@ -46,7 +46,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         // @formatter:off
         http.authorizeRequests()
-                .antMatchers("/uaa/**", "/login").permitAll()
+                // FIXME: secure "/manage/**"
+                .antMatchers("/uaa/**", "/login", "/manage/**").permitAll()
                 .anyRequest().authenticated()
             .and()
                 .csrf().requireCsrfProtectionMatcher(csrfRequestMatcher()).csrfTokenRepository(csrfTokenRepository())

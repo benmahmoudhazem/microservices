@@ -14,9 +14,15 @@ if [ $# -eq 0 ]; then
 fi
 
 export SERVICE=${1%/}
-export SERVICE_TARGET_DIR=$SERVICE*/target/
+export SERVICE_TARGET_DIR=$SERVICE*/target
 
-. ./ops/env-$SERVICE*.sh
 
-./$SERVICE_TARGET_DIR/$SERVICE*-exec.jar start
+FILE=$SERVICE_TARGET_DIR/$SERVICE*-exec.jar
 
+if [ -f $FILE ]
+then
+    . ./ops/env-$SERVICE*.sh
+    ./$FILE start
+else
+    echoRed "the jar file does not exist ($FILE)"
+fi

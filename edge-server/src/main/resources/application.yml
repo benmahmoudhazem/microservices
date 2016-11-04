@@ -15,6 +15,7 @@ server:
     access_log_pattern: '%h %t "%r" %s %b'
     basedir: tomcat
 
+# Actuator Management
 management:
   context-path: /manage
 
@@ -30,6 +31,7 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
 
+# Define Zuul Server's routes
 zuul:
   routes:
     uaa-server:
@@ -44,6 +46,7 @@ security:
   basic:
     enabled: false
   ignored: none
+  # Oauth2 Configuration
   oauth2:
     sso:
       loginPath: /login
@@ -61,5 +64,5 @@ security:
       id: openid
       serviceId: ${PREFIX:}resource
 
-# FIXME : replace by        keyUri: http://localhost:9090/uaa/oauth/token
+# FIXME?? : replace by        keyUri: http://localhost:9090/uaa/oauth/token
 
